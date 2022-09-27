@@ -10,9 +10,6 @@ export default function FirstPost() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>First Post</h1>
-      <h2>
-        <Link href="/">Back to home</Link>
-      </h2>
     </Layout>
   );
 }
