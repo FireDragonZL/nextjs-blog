@@ -14,7 +14,7 @@ export default function Home({ allPostsData }) {
         <p>[Your Self Introduction]</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="/posts/first-post">our Next.js tutorial</a>.)
+          <Link href="/posts/first-post">our Next.js tutorial</Link>.)
         </p>
       </section>
       {/* 博客目录，使用Link配合动态路由进行页面跳转 */}
@@ -23,9 +23,7 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
+              <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               {date}
             </li>

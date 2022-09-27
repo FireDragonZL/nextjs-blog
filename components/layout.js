@@ -1,15 +1,16 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import styles from "./layout.module.css";
+import utilStyles from "../styles/utils.module.css";
+import Link from "next/link";
+import Image from "next/image";
 
-const name = 'Your Name'
-export const siteTitle = 'Next.js Sample Website'
+const name = "Your Name";
+export const siteTitle = "Next.js Sample Website";
 
 /**
  * 未多个页面共享的全局共享组件
- * @param {*} param0 
- * @returns 
+ * @param {*} param0
+ * @returns
  */
 export default function Layout({ children, home }) {
   return (
@@ -32,10 +33,12 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <img
+            <Image
               src="/images/cat.jpg"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
+              width="100px"
+              height="100px"
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
@@ -43,10 +46,12 @@ export default function Layout({ children, home }) {
           <>
             <Link href="/">
               <a>
-                <img
+                <Image
                   src="/images/cat.jpg"
                   className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                   alt={name}
+                  width="100px"
+                  height="100px"
                 />
               </a>
             </Link>
@@ -67,5 +72,5 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
-  )
+  );
 }
